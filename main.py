@@ -12,7 +12,9 @@ from ciphers import (
     columnar_transposition_encrypt, columnar_transposition_decrypt,
     rotato_encrypt, rotato_decrypt,
     des_encrypt, des_decrypt,
-    generate_rsa_keys, rsa_encrypt, rsa_decrypt
+    generate_rsa_keys, rsa_encrypt, rsa_decrypt,
+    otp_encrypt, otp_decrypt,
+    monoalphabet_encrypt, monoalphabet_decrypt
 )
 
 class CipherHandler:
@@ -20,7 +22,7 @@ class CipherHandler:
     
     SUPPORTED_CIPHERS = [
         'Caesar', 'Affine', 'Vigenère', 'Rail Fence',
-        'Columnar Transposition', 'RSA', 'Rotato', 'DES'
+        'Columnar Transposition', 'RSA', 'Rotato', 'DES', 'OTP', 'MonoAlphabet'
     ]
     
     def __init__(self):
@@ -38,7 +40,9 @@ class CipherHandler:
             'Columnar Transposition': [{'label': 'Key:', 'width': 20}],
             'Rotato': [{'label': 'Rotation Key:', 'width': 10}],
             'DES': [{'label': 'Key:', 'width': 20, 'note': 'Note: Uses binary output'}],
-            'RSA': [{'label': 'Public Exponent (e):', 'width': 10}]
+            'RSA': [{'label': 'Public Exponent (e):', 'width': 10}],
+            'OTP': [{'label': 'Key:', 'width': 40, 'note': 'Note: Key must be at least as long as the text'}],
+            'MonoAlphabet': [{'label': 'Substitution Alphabet:', 'width': 40, 'note': 'Note: Must be 26 unique letters'}]
         }
         return configs.get(cipher_name, [])
     
@@ -107,6 +111,22 @@ class CipherHandler:
                 if self.rsa_keys['d'] is None or self.rsa_keys['n'] is None:
                     raise ValueError("Generate RSA keys first")
                 return rsa_decrypt(text, self.rsa_keys['d'], self.rsa_keys['n'])
+                
+        elif cipher_name == 'OTP':
+            key = key_values[0]
+            if not key:
+                raise ValueError("OTP key cannot be empty")
+            if len(key) < len(text):
+                raise ValueError("OTP key must be at least as long as the text")
+            return otp_encrypt(text, key) if mode == "encrypt" else otp_decrypt(text, key)
+                
+        elif cipher_name == 'MonoAlphabet':
+            key = key_values[0]
+            if not key:
+                raise ValueError("MonoAlphabet key cannot be empty")
+            if len(key) != 26:
+                raise ValueError("MonoAlphabet key must be 26 unique letters")
+            return monoalphabet_encrypt(text, key) if mode == "encrypt" else monoalphabet_decrypt(text, key)
                 
         else:
             raise ValueError(f"Unsupported cipher: {cipher_name}")
