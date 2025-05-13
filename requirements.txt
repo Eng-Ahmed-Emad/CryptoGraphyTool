@@ -1,1 +1,14 @@
-tkinter 
+Python 3.7 or higher is recommended.
+pip install pyDes
+pip install black flake8 mypy
+These modules come with Python and do not need installation:
+    Tkinter
+
+    os
+
+    math
+
+    base64
+
+    typing
+
