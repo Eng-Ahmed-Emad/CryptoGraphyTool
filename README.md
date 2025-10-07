@@ -2,6 +2,52 @@
 
 A Python GUI application that implements various classical and modern ciphers including Caesar, Affine, Vigenère, Rail Fence, Columnar Transposition, and Salsa20 ciphers.
 
+### By **Ahmed Emad Eldeen Abdelmoneam**
+
+<!-- Badges row -->
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
+![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)
+![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20Windows-lightgrey.svg)
+![Security](https://img.shields.io/badge/SOC-Security_Operations_Center-critical.svg)
+
+<!-- Tool / project badges (Wazuh, Atomic Red Team, Suricata, Hacking) -->
+![Wazuh](https://img.shields.io/badge/Wazuh-%23000000?style=flat&logo=wazuh&logoColor=white)
+![Atomic Red Team](https://img.shields.io/badge/Atomic_Red_Team-%23FF6A00?style=flat&logo=atom&logoColor=white)
+![Suricata](https://img.shields.io/badge/Suricata-%230078D7?style=flat&logo=suricata&logoColor=white)
+![Hacking / Kali](https://img.shields.io/badge/Hacking-%23A0B0C0?style=flat&logo=kali-linux&logoColor=white)
+
+<!-- Optional: logos row using project assets (uncomment & add files under assets/logos/) -->
+<!--
+<p align="center">
+  <img src="assets/logos/wazuh.svg" alt="Wazuh" width="120" height="auto" />
+  <img src="assets/logos/atomic-red-team.svg" alt="Atomic Red Team" width="120" height="auto" />
+  <img src="assets/logos/suricata.svg" alt="Suricata" width="120" height="auto" />
+  <img src="assets/logos/kali.svg" alt="Kali / Hacking" width="120" height="auto" />
+</p>
+-->
+
+---
+
+## 👨‍💻 Authors & Contributions
+
+**SOC Team Lead:**  
+👤 **Ahmed Emad Eldeen Abdelmoneam**
+
+<table>
+  <tr>
+    <td>
+      <ul>
+        <li>🔗 <b>LinkedIn:</b> <a href="https://www.linkedin.com/in/0x3omda/">linkedin.com/in/0x3omda</a></li>
+        <li>🌐 <b>Portfolio:</b> <a href="https://eng-ahmed-emad.github.io/AhmedEmad-Dev/">Portfolio</a></li>
+      </ul>
+    </td>
+    <td><img align="right" height="153" width="159" src="gif/anime-frieren.gif" /></td>
+    <td><img align="right" height="153" width="159" src="gif/giphy.gif" /></td>
+  </tr>
+</table>
+
+---
+
 ## Features
 
 ### Classical Ciphers
